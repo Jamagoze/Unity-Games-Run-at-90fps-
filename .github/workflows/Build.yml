@@ -16,10 +16,9 @@ jobs:
           rm -rf build_src && mkdir build_src
           unzip -q unity_fps.zip -d build_src
 
-      - name: Fetch Dobby and zygisk.hpp
+      - name: Fetch zygisk.hpp
         working-directory: build_src
         run: |
-          git clone --depth 1 https://github.com/jmpews/Dobby.git Dobby
           if [ ! -f src/zygisk.hpp ]; then
             curl -fsSL https://raw.githubusercontent.com/topjohnwu/zygisk-module-sample/master/module/jni/zygisk.hpp -o src/zygisk.hpp \
             || curl -fsSL https://raw.githubusercontent.com/topjohnwu/zygisk-module-sample/main/module/jni/zygisk.hpp -o src/zygisk.hpp
